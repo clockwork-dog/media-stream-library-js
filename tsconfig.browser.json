@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "files": [
+    "lib/index.browser.ts"
+  ],
+  "exclude": [
+    "lib/**/*.node.ts"
+  ]
+}

@@ -3,14 +3,12 @@
   "version": "11.1.1",
   "description": "Media stream library for Node & the Web.",
   "license": "MIT",
-  "main": "dist/node-cjs.js",
-  "module": "dist/node-esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "browser": {
-    "dist/node-cjs.js": "dist/browser-cjs.js",
-    "dist/node-esm.js": "dist/browser-esm.js",
     "stream": "stream-browserify"
   },
-  "types": "dist/index.browser.d.ts",
   "bin": {
     "live": "examples/node/player.js"
   },
@@ -25,9 +23,11 @@
     "lint": "yarn lint:ts && yarn prettier:check",
     "test": "jest --coverage",
     "verify": "yarn lint && yarn test",
-    "build": "yarn build:types && yarn build:bundle",
-    "build:types": "tsc -p tsconfig.json",
-    "build:bundle": "node esbuild.js && sbin/copyMinified.sh",
+    "build:browser": "node esbuild.js --target browser",
+    "build:node": "node esbuild.js --target node && ./sbin/copyNode.sh",
+    "build:minified": "node esbuild.js --target minified && ./sbin/copyMinified.sh",
+    "changePackageName:browser": "node changePackageName.js --name @clockworkdog/media-stream-library-browser",
+    "changePackageName:node": "node changePackageName.js --name @clockworkdog/media-stream-library-node",
     "lint:ts": "eslint --ext '.ts' lib/",
     "prettier:check": "prettier --check '{lib,examples}/**/*.{ts,js}'",
     "prettier:fix": "prettier --write '{lib,examples}/**/*.{ts,js}' --fix --loglevel silent",
@@ -47,6 +47,8 @@
     "rtsp"
   ],
   "dependencies": {
+    "@types/node": "16.11.32",
+    "@types/ws": "8.5.3",
     "buffer": "6.0.3",
     "debug": "4.3.4",
     "events": "3.3.0",
@@ -58,8 +60,6 @@
   "devDependencies": {
     "@types/debug": "4.1.7",
     "@types/jest": "27.4.1",
-    "@types/node": "16.11.32",
-    "@types/ws": "8.5.3",
     "@typescript-eslint/eslint-plugin": "5.21.0",
     "@typescript-eslint/parser": "5.21.0",
     "cypress": "9.6.0",
