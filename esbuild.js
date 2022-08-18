@@ -37,7 +37,7 @@ for (const format of ['esm', 'cjs']) {
         minify: true,
         sourcemap: true,
         // avoid a list of browser targets by setting a common baseline ES level
-        target: 'es2015',
+        target: 'es2020',
       })
       break;
 
@@ -72,7 +72,7 @@ for (const format of ['esm', 'cjs']) {
         minify: true,
         sourcemap: true,
         // avoid a list of browser targets by setting a common baseline ES level
-        target: 'es2015',
+        target: 'es2020',
       })
       break;
   }
