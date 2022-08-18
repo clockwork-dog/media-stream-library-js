@@ -7,7 +7,8 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "browser": {
-    "stream": "stream-browserify"
+    "stream": "stream-browserify",
+    "url": "whatwg-url"
   },
   "bin": {
     "live": "examples/node/player.js"
@@ -48,6 +49,7 @@
   ],
   "dependencies": {
     "@types/node": "16.11.32",
+    "@types/whatwg-url": "^8.2.2",
     "@types/ws": "8.5.3",
     "buffer": "6.0.3",
     "debug": "4.3.4",
@@ -55,6 +57,7 @@
     "process": "0.11.10",
     "stream-browserify": "3.0.0",
     "ts-md5": "1.2.11",
+    "whatwg-url": "^11.0.0",
     "ws": "8.5.0"
   },
   "devDependencies": {
