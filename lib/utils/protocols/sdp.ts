@@ -253,7 +253,7 @@ const attributeParsers: any = {
     const [format, stringParameters] = splitOnFirst(' ', value)
     switch (format) {
       default:
-        const pairs = stringParameters.trim().split(';')
+        const pairs = stringParameters ? stringParameters.trim().split(';') : []
         const parameters: { [key: string]: any } = {}
         pairs.forEach((pair) => {
           const [key, val] = splitOnFirst('=', pair)
