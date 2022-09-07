@@ -1,4 +1,3 @@
-import { URL } from 'url'
 import { Source } from '../component'
 import { Readable, Writable } from 'stream'
 import { connect, Socket } from 'net'

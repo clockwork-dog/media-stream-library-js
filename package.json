@@ -7,8 +7,7 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "browser": {
-    "stream": "stream-browserify",
-    "url": false
+    "stream": "stream-browserify"
   },
   "bin": {
     "live": "examples/node/player.js"
