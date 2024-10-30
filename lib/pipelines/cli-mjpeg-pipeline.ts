@@ -1,14 +1,8 @@
-import { Auth, AuthConfig } from '../components/auth'
+import { Auth, RtspAuthConfig } from '../components/auth'
 import { RtspMjpegPipeline } from './rtsp-mjpeg-pipeline'
 import { TcpSource } from '../components/tcp'
 import { MessageType } from '../components/message'
 import { Sink } from '../components/component'
-import { RtspConfig } from '../components/rtsp-session'
-
-interface RtspAuthConfig {
-  rtsp?: RtspConfig
-  auth?: AuthConfig
-}
 
 /**
  * CliMjpegPipeline

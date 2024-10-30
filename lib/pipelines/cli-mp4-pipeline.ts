@@ -1,14 +1,8 @@
-import { RtspConfig } from '../components/rtsp-session'
 import { TcpSource } from '../components/tcp'
 import { RtspMp4Pipeline } from './rtsp-mp4-pipeline'
 import { MessageType } from '../components/message'
-import { AuthConfig, Auth } from '../components/auth'
+import { RtspAuthConfig, Auth } from '../components/auth'
 import { Sink } from '../components/component'
-
-interface RtspAuthConfig {
-  rtsp?: RtspConfig
-  auth?: AuthConfig
-}
 
 /**
  * CliMp4Pipeline
