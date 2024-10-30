@@ -3,6 +3,7 @@ import { statusCode } from '../../utils/protocols/rtsp'
 import { Tube } from '../component'
 import { Message, MessageType, RtspMessage } from '../message'
 import { createTransform } from '../messageStreams'
+import { RtspConfig } from '../rtsp-session'
 import { DigestAuth } from './digest'
 import { parseWWWAuthenticate } from './www-authenticate'
 
@@ -11,6 +12,11 @@ const UNAUTHORIZED = 401
 export interface AuthConfig {
   username?: string
   password?: string
+}
+
+export interface RtspAuthConfig {
+  rtsp?: RtspConfig
+  auth?: AuthConfig
 }
 
 const DEFAULT_CONFIG = {
